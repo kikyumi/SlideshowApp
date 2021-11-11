@@ -37,8 +37,12 @@
                                     <action selector="nextClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljL-dA-C02"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RoT-Fz-ZIZ">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RoT-Fz-ZIZ">
                                 <rect key="frame" x="30" y="99" width="354" height="128"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ipF-YR-5Kt" appends="YES" id="FI9-Bg-pVr"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -62,13 +66,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ipF-YR-5Kt">
+                    <connections>
+                        <action selector="tapImage:" destination="BYZ-38-t0r" id="A3u-D3-bQf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.22429906542056" y="75.161987041036724"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="FZS-Oe-RkM">
             <objects>
-                <viewController id="vuG-bG-8uX" customClass="ImageViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vuG-bG-8uX" customClass="ImageViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MgD-02-jl5" customClass="ima">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +88,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VL-K3-RYz">
                                 <rect key="frame" x="191.66666666666666" y="353" width="31" height="30"/>
                                 <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="B1P-ZV-eEj" kind="unwind" unwindAction="exit:" id="GgZ-53-i4p"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hgv-0v-g3y"/>
@@ -91,8 +103,12 @@
                             <constraint firstItem="Hgv-0v-g3y" firstAttribute="trailing" secondItem="QIz-Me-D87" secondAttribute="trailing" id="zLb-Ni-eTo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bigImage" destination="QIz-Me-D87" id="GCK-ES-8Xf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIc-mF-aew" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="B1P-ZV-eEj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="685" y="78"/>
         </scene>

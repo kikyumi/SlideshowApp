@@ -11,6 +11,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myImageView: UIImageView!
     
+    @IBAction func tapImage(_ sender: Any) {
+        let ImageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+        self.present(ImageViewController, animated: true, completion: nil)
+    }
+
+    
     @IBOutlet weak var onOffButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -74,7 +80,9 @@ class ViewController: UIViewController {
     }
     
     
-    
+    @IBAction func exit(_ segue: UIStoryboardSegue) {
+            // 他の画面から segue を使って戻ってきた時に呼ばれる
+        }
 
 
 }
