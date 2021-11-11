@@ -86,7 +86,7 @@
                                 <rect key="frame" x="0.0" y="145" width="414" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VL-K3-RYz">
-                                <rect key="frame" x="191.66666666666666" y="353" width="31" height="30"/>
+                                <rect key="frame" x="191.66666666666666" y="420" width="31" height="30"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <segue destination="B1P-ZV-eEj" kind="unwind" unwindAction="exit:" id="GgZ-53-i4p"/>
@@ -98,6 +98,7 @@
                         <constraints>
                             <constraint firstItem="QIz-Me-D87" firstAttribute="top" secondItem="Hgv-0v-g3y" secondAttribute="top" constant="50" id="AYj-Du-9WR"/>
                             <constraint firstItem="QIz-Me-D87" firstAttribute="centerX" secondItem="MgD-02-jl5" secondAttribute="centerX" id="Hk7-7T-a9p"/>
+                            <constraint firstItem="6VL-K3-RYz" firstAttribute="top" secondItem="QIz-Me-D87" secondAttribute="bottom" constant="50" id="dQx-6Z-qq6"/>
                             <constraint firstItem="QIz-Me-D87" firstAttribute="leading" secondItem="Hgv-0v-g3y" secondAttribute="leading" id="gcd-nI-6Zq"/>
                             <constraint firstItem="6VL-K3-RYz" firstAttribute="centerX" secondItem="MgD-02-jl5" secondAttribute="centerX" id="qag-cL-cAv"/>
                             <constraint firstItem="Hgv-0v-g3y" firstAttribute="trailing" secondItem="QIz-Me-D87" secondAttribute="trailing" id="zLb-Ni-eTo"/>

@@ -10,13 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var myImageView: UIImageView!
-    
-    @IBAction func tapImage(_ sender: Any) {
-        let ImageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
-        self.present(ImageViewController, animated: true, completion: nil)
-    }
-
-    
     @IBOutlet weak var onOffButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -48,6 +41,17 @@ class ViewController: UIViewController {
         }
         myImageView.image = imageArray [imageIndex]
     }
+    
+    
+    //画像タップ時の画面遷移＆値渡し
+    @IBAction func tapImage(_ sender: Any) {
+        let ImageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+        ImageViewController.bigImageArray = imageArray
+        ImageViewController.bigIndex = imageIndex
+        self.present(ImageViewController, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func nextClick(_ sender: Any) {
         changeImage()

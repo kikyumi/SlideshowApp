@@ -10,16 +10,23 @@ import UIKit
 class ImageViewController: UIViewController {
     
     @IBOutlet weak var bigImage: UIImageView!
+    var ImageViewController: ImageViewController!
     
+    var bigImageArray = [
+        UIImage(named: "image01"),
+        UIImage(named: "image02"),
+        UIImage(named: "image03"),
+        UIImage(named: "image04"),
+    ]
+    var bigIndex = 0
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        bigImage.image = UIImage(named: "image01")
+        bigImage.image = bigImageArray [bigIndex]
     }
-    
-    
 
     /*
     // MARK: - Navigation
